@@ -5,7 +5,8 @@ const app = express();
 app.get('/', (req, res) => {
   let stg = new Smite();
   stg.getLists(() => {
-    res.send(stg.lists);
+    console.log(stg.generateTeam());
+    res.send(stg.generateTeam());
   });
 });
 

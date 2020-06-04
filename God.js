@@ -3,9 +3,9 @@ const magicals = ['Mage', 'Guardian'];
 
 class God {
 
-    constructor(name, position) {
-        this.name = name;
-        this.position = position;
+    constructor(godObject) {
+        this.name = godObject.Name;
+        this.position = godObject.Type;
     }
 
     checkBuild(build) {
@@ -17,6 +17,14 @@ class God {
         return true;
     }
 
+    get type() {
+        if (['assassin', 'hunter', 'warrior'].includes(this.position.toLowerCase())) {
+            return 'physical';
+        } else {
+            return 'magical';
+        }
+    }
+
     get physical() {
         return physicals.includes(this.position);
     }
@@ -26,3 +34,5 @@ class God {
     }
 
 }
+
+module.exports = God;

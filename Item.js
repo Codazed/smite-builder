@@ -1,19 +1,26 @@
+const {boolean} = require('boolean');
 class Item {
 
-    constructor(name, physical, magical, type, availability) {
-        this.name = name;
-        this.physical = physical;
-        this.magical = magical;
-        this.type = type;
-        this.availability = availability;
+    constructor(itemObject) {
+        this.name = itemObject.Name;
+        this.physical = boolean(itemObject.Physical);
+        this.magical = boolean(itemObject.Magical);
+        this.type = itemObject.ItemType.toLowerCase();
+        this.availability = [
+            boolean(itemObject.Assassins) + 0,
+            boolean(itemObject.Hunters) + 0,
+            boolean(itemObject.Mages) + 0,
+            boolean(itemObject.Warriors) + 0,
+            boolean(itemObject.Guardians) + 0
+        ]
     }
 
     get mask() {
-        return "Lono's Mask" === name || "Rangda's Mask" === name || "Bumba's Mask" === name;
+        return ['Lono\'s Mask', 'Rangda\'s Mask', 'Bumba\'s Mask'].includes(this.name);
     }
 
     available(god) {
-        return this.availability.get(god.position);
+        return this.availability[(god.position)];
     }
 
     get offensive() {
@@ -25,3 +32,5 @@ class Item {
     }
 
 }
+
+module.exports = Item;
