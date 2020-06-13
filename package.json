@@ -7,7 +7,9 @@
     "knuth-shuffle-seeded": "^1.0.6",
     "papaparse": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.2.0"
+  },
   "name": "smite-builder",
   "version": "0.0.1",
   "description": "Generate random teams and players with random builds to use with the Hi-Rez Studios game, Smite.",
