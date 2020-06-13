@@ -1,8 +1,8 @@
 const Chance = require('chance');
 const chance = new Chance();
-const Item = require('./Item.js');
-const God = require('./God.js');
-const Team = require('./Team.js');
+const Item = require('./src/Item.js');
+const God = require('./src/God.js');
+const Team = require('./src/Team.js');
 
 const boots = [];
 const gods = [];
@@ -247,10 +247,11 @@ class SmiteTeamGenerator {
 
 function parseList(listUrl, callback) {
     const Papa = require('papaparse');
-    const got = require('got');
+    const axios = require('axios');
     (async () => {
-      let response = await got(listUrl);
-      callback(Papa.parse(response.body, {header: true}).data);
+      axios.get(listUrl).then(response => {
+          callback(Papa.parse(response.data, {header: true}).data);
+      });
     })();
 }
 

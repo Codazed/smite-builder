@@ -48,7 +48,6 @@ class Team {
                     if (rerolling.god === god || rerolling.god === selected.god) {
                         rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
                         testing = true;
-                        break;
                     }
                 });
             }
@@ -67,7 +66,6 @@ class Team {
                     if (rerolling.god.position === position) {
                         rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
                         testing = true;
-                        break;
                     }
                 });
             }
