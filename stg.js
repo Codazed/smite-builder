@@ -31,10 +31,10 @@ class SmiteTeamGenerator {
     }
 
     getLists(callback) {
-        const bootsUrl = 'https://api.smitebuilder.app/lists/boots';
-        const godsUrl = 'https://api.smitebuilder.app/lists/gods';
-        const itemsUrl = 'https://api.smitebuilder.app/lists/items';
-        const relicsUrl = 'https://api.smitebuilder.app/lists/relics';
+        const bootsUrl = 'https://api.smitebuilder.app/lists/boots.csv';
+        const godsUrl = 'https://api.smitebuilder.app/lists/gods.csv';
+        const itemsUrl = 'https://api.smitebuilder.app/lists/items.csv';
+        const relicsUrl = 'https://api.smitebuilder.app/lists/relics.csv';
         parseList(bootsUrl, (data) => {
             data.pop();
             data.forEach((boot) => {
