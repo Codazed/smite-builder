@@ -41,13 +41,7 @@ class SmiteTeamGenerator {
             parseList(bootsUrl, (data) => {
                 data.pop();
                 data.forEach((boot) => {
-                    const bootObj = boot;
-                    bootObj.Assassins = true;
-                    bootObj.Hunters = true;
-                    bootObj.Mages = true;
-                    bootObj.Warriors = true;
-                    bootObj.Guardians = true;
-                    boots.push(new Item(bootObj));
+                    boots.push(new Item(boot));
                 });
                 parseList(godsUrl, (data) => {
                     data.pop();
@@ -124,8 +118,16 @@ class SmiteTeamGenerator {
         let availableItems = items.filter(item => item.available(god));
         let availableBoots = boots.filter(boot => boot.available(god));
         function getItem() {
-            return availableItems.splice(
+            let item = availableItems.splice(
                 chance.integer({min: 0, max: availableItems.length - 1}), 1)[0];
+            if (item.mask) {
+                availableItems.forEach((item, index) => {
+                    if (item.mask) {
+                        availableItems.splice(index, 1);
+                    }
+                });
+            }
+            return item;
         }
 
         function getBoot() {
