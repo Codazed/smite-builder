@@ -5,13 +5,13 @@ class Item {
         this.physical = boolean(itemObject.Physical);
         this.magical = boolean(itemObject.Magical);
         this.type = itemObject.ItemType.toLowerCase();
-        this.availability = [
-            boolean(itemObject.Assassins) + 0,
-            boolean(itemObject.Hunters) + 0,
-            boolean(itemObject.Mages) + 0,
-            boolean(itemObject.Warriors) + 0,
-            boolean(itemObject.Guardians) + 0,
-        ];
+        this.availability = {
+            assassin: boolean(itemObject.Assassins),
+            hunter: boolean(itemObject.Hunters),
+            mage: boolean(itemObject.Mages),
+            warrior: boolean(itemObject.Warriors),
+            guardian: boolean(itemObject.Guardians)
+        };
     }
 
     get mask() {
@@ -19,7 +19,7 @@ class Item {
     }
 
     available(god) {
-        return this.availability[(god.position)];
+        return this.availability[god.position.toLowerCase()];
     }
 
     get offensive() {

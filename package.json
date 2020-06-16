@@ -8,7 +8,9 @@
     "papaparse": "^5.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.2.0"
+    "chai": "^4.2.0",
+    "eslint": "^7.2.0",
+    "mocha": "^8.0.1"
   },
   "name": "smite-builder",
   "version": "0.0.1",
@@ -16,5 +18,8 @@
   "main": "stg.js",
   "repository": "https://gitlab.com/Codazed/smite-builder",
   "author": "Codazed",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "scripts": {
+    "test": "mocha"
+  }
 }

@@ -9,6 +9,8 @@ const gods = [];
 const items = [];
 const relics = [];
 
+const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
+
 class SmiteTeamGenerator {
     constructor() {
         this.forcingBalanced = false;
@@ -30,37 +32,39 @@ class SmiteTeamGenerator {
         };
     }
 
-    getLists(callback) {
-        const bootsUrl = 'https://api.smitebuilder.app/lists/boots.csv';
-        const godsUrl = 'https://api.smitebuilder.app/lists/gods.csv';
-        const itemsUrl = 'https://api.smitebuilder.app/lists/items.csv';
-        const relicsUrl = 'https://api.smitebuilder.app/lists/relics.csv';
-        parseList(bootsUrl, (data) => {
-            data.pop();
-            data.forEach((boot) => {
-                const bootObj = boot;
-                bootObj.Assassins = true;
-                bootObj.Hunters = true;
-                bootObj.Mages = true;
-                bootObj.Warriors = true;
-                bootObj.Guardians = true;
-                boots.push(new Item(bootObj));
-            });
-            parseList(godsUrl, (data) => {
+    getLists() {
+        return new Promise(function(resolve) {
+            const bootsUrl = 'https://api.smitebuilder.app/lists/boots.csv';
+            const godsUrl = 'https://api.smitebuilder.app/lists/gods.csv';
+            const itemsUrl = 'https://api.smitebuilder.app/lists/items.csv';
+            const relicsUrl = 'https://api.smitebuilder.app/lists/relics.csv';
+            parseList(bootsUrl, (data) => {
                 data.pop();
-                data.forEach((god) => {
-                    gods.push(new God(god));
+                data.forEach((boot) => {
+                    const bootObj = boot;
+                    bootObj.Assassins = true;
+                    bootObj.Hunters = true;
+                    bootObj.Mages = true;
+                    bootObj.Warriors = true;
+                    bootObj.Guardians = true;
+                    boots.push(new Item(bootObj));
                 });
-                parseList(itemsUrl, (data) => {
+                parseList(godsUrl, (data) => {
                     data.pop();
-                    data.forEach((item) => {
-                        items.push(new Item(item));
+                    data.forEach((god) => {
+                        gods.push(new God(god));
                     });
-                    parseList(relicsUrl, (data) => {
-                        data.forEach((relic) => {
-                            relics.push(relic);
+                    parseList(itemsUrl, (data) => {
+                        data.pop();
+                        data.forEach((item) => {
+                            items.push(new Item(item));
                         });
-                        callback();
+                        parseList(relicsUrl, (data) => {
+                            data.forEach((relic) => {
+                                relics.push(relic);
+                                resolve();
+                            });
+                        });
                     });
                 });
             });
@@ -74,7 +78,6 @@ class SmiteTeamGenerator {
         const size = options.size || 5;
         const shuffle = require('knuth-shuffle-seeded');
         const team = new Team(this);
-        const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
         if (this.forcingBalanced) {
             // Generate a team that does not duplicate positions
             shuffle(positions);
@@ -107,7 +110,7 @@ class SmiteTeamGenerator {
         return team;
     }
 
-    makePlayer(position, buildType=this.buildType) {
+    makePlayer(position=positions[chance.integer({min: 0, max: 4})], buildType=this.buildType) {
         const player = {};
         player.god = this.getGod(position);
         player.build = {};
@@ -118,36 +121,19 @@ class SmiteTeamGenerator {
     }
 
     getItems(god, num=6) {
-        function getItem(type) {
-            let item = items[chance.integer({min: 0, max: items.length-1})];
-            if (type.toLowerCase() === 'physical') {
-                while (item.magical && !item.physical) {
-                    item = items[chance.integer({min: 0, max: items.length-1})];
-                }
-            } else {
-                while (item.physical && !item.magical) {
-                    item = items[chance.integer({min: 0, max: items.length-1})];
-                }
-            }
-            return item;
+        let availableItems = items.filter(item => item.available(god));
+        let availableBoots = boots.filter(boot => boot.available(god));
+        function getItem() {
+            return availableItems.splice(
+                chance.integer({min: 0, max: availableItems.length - 1}), 1)[0];
         }
 
-        function getBoot(type) {
-            let boot = boots[chance.integer({min: 0, max: boots.length-1})];
-            if (type.toLowerCase() === 'physical') {
-                while (boot.magical && !boot.physical) {
-                    boot = boots[chance.integer({min: 0, max: boots.length-1})];
-                }
-            } else {
-                while (boot.physical && !boot.magical) {
-                    boot = boots[chance.integer({min: 0, max: boots.length-1})];
-                }
-            }
-            return boot;
+        function getBoot() {
+            return availableBoots.splice(
+                chance.integer({min: 0, max: availableBoots.length - 1}), 1)[0];
         }
 
-        const Set = require('collections/set');
-        const generation = new Set();
+        const generation = [];
         if (god.name === 'Ratatoskr') {
             const item = {
                 Name: 'Acorn of Yggdrasil',
@@ -160,18 +146,18 @@ class SmiteTeamGenerator {
                 Warriors: false,
                 Guardians: false,
             };
-            generation.add(new Item(item));
+            generation.push(new Item(item));
         } else {
             if (chance.integer({min: 0, max: 100}) > 35 && !this.forcingBoots) {
-                generation.add(getItem(god.position));
+                generation.push(getItem(god.position));
             } else {
-                generation.add(getBoot(god.position));
+                generation.push(getBoot(god.position));
             }
         }
-        while (generation.size < num) {
-            generation.add(getItem(god.position));
+        while (generation.length < num) {
+            generation.push(getItem(god.position));
         }
-        return generation.toArray();
+        return generation;
     }
 
     processBuild(god, build, buildType) {
@@ -184,7 +170,7 @@ class SmiteTeamGenerator {
             } else {
                 let offensiveNum = 0;
                 let defensiveNum = 0;
-                build.forEach((item) => {
+                build.forEach(item => {
                     if (item.offensive) offensiveNum++;
                     if (item.defensive) defensiveNum++;
                 });
@@ -236,9 +222,10 @@ class SmiteTeamGenerator {
     }
 
     getGod(position) {
-        let god = gods[chance.integer({min: 0, max: gods.length})];
-        while (god.position.toLowerCase() === position.toLowerCase()) {
-            god = gods[chance.integer({min: 0, max: gods.length})];
+        let random = chance.integer({min: 0, max: gods.length-1});
+        let god = gods[random];
+        while (god.position.toLowerCase() !== position.toLowerCase()) {
+            god = gods[chance.integer({min: 0, max: gods.length-1})];
         }
         return god;
     }
