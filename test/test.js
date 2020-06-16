@@ -5,7 +5,7 @@ const maxTests = 1000000;
 describe('stg', function() {
     this.timeout(60000);
     before(function(done) {
-        stg.getLists().then(done);
+        stg.getLists(done);
     });
     it('All gods should be generated at least once', function() {
         let totalAttempts = 0;
@@ -84,23 +84,23 @@ describe('stg', function() {
                 if (!item.available(player.god)) {
                     assert.fail(item.name + 'was put on ' + player.god.name);
                 }
-            })
+            });
         }
     });
     it('Check for multiple masks on single build', function() {
-       for (let i = 0; i < maxTests; i++) {
-           let player = stg.makePlayer();
-           let build = player.build.items;
-           let maskCount = 0;
-           build.forEach(item => {
-               if (['Bumba\'s Mask', 'Lono\'s Mask', 'Rangda\'s Mask'].includes(item.name)) {
-                   maskCount++;
-               }
-           });
-           if (maskCount > 1) {
-               assert.fail('There is more than one mask on a build.\nOffending build: ' + JSON.stringify(player, '', ' '));
-           }
-       }
+        for (let i = 0; i < maxTests; i++) {
+            let player = stg.makePlayer();
+            let build = player.build.items;
+            let maskCount = 0;
+            build.forEach(item => {
+                if (['Bumba\'s Mask', 'Lono\'s Mask', 'Rangda\'s Mask'].includes(item.name)) {
+                    maskCount++;
+                }
+            });
+            if (maskCount > 1) {
+                assert.fail('There is more than one mask on a build.\nOffending build: ' + JSON.stringify(player, '', ' '));
+            }
+        }
     });
     it('Get generator stats', function() {
         console.log('This test is designed to check the percent chance of full builds of a particular play style (Offense, Defense). It will also calculate how fast the generator is on your system. This test will NOT fail.');
@@ -126,12 +126,12 @@ describe('stg', function() {
             let offensiveItems = 0;
             let defensiveItems = 0;
             player.build.items.forEach(item => {
-               if (item.offensive) {
-                   offensiveItems++;
-               }
-               if (item.defensive) {
-                   defensiveItems++;
-               }
+                if (item.offensive) {
+                    offensiveItems++;
+                }
+                if (item.defensive) {
+                    defensiveItems++;
+                }
             });
             if (offensiveItems === 6) {
                 if (defensiveGod) {
