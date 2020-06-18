@@ -102,7 +102,7 @@ describe('stg', function() {
             }
         }
     });
-    it('Get generator stats', function() {
+    /*it('Get generator stats', function() {
         console.log('This test is designed to check the percent chance of full builds of a particular play style (Offense, Defense). It will also calculate how fast the generator is on your system. This test will NOT fail.');
         console.log('Depending on the \'testMultiplier\' value, this test can take anywhere from a few seconds to a few minutes. Just remember, the higher the value for that variable, the more accurate the results are going to be.');
         let testMultiplier = 1;
@@ -173,5 +173,5 @@ describe('stg', function() {
         console.log('Statistics calculated out of the total ' + totalAttempts + ' build generations for this particular test.');
         console.log('Average elapsed time per 10000 builds: ' + avgTime + 'ms');
         console.log('Calculated builds per second: ' + bps + ' b/s');
-    });
+    });*/
 });
