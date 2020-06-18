@@ -26,4 +26,4 @@ builder.getLists(function() {
 
 Keep in mind that without running the getLists function once, the module will have nothing to generate from.
 
-For usage instructions, please read the [Documentation](https://smite-builder.readthedocs.io/en/latest/).
+For usage instructions, ~~please consult the documentation~~ (coming soon).
