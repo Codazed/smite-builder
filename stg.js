@@ -64,10 +64,10 @@ class SmiteBuilder {
     }
 
     generateTeam(options = {}) {
-        this.forcingBalanced = options.forceBalanced || false;
-        this.forcingBoots = options.forceBoots || true;
-        this.buildType = options.buildType || 0;
-        const size = options.size || 5;
+        this.forcingBalanced = options.forceBalanced !== undefined ? options.forceBalanced : false;
+        this.forcingBoots = options.forceBoots !== undefined ? options.forceBoots : true;
+        this.buildType = options.buildType !== undefined ? options.buildType : 0;
+        const size = options.size !== undefined ? options.size : 5;
         const shuffle = require('knuth-shuffle-seeded');
         const team = new Team(this);
         if (this.forcingBalanced) {
