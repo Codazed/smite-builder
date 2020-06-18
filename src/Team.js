@@ -1,52 +1,52 @@
 let stg;
 
-class Team {
+class Team extends Array {
     constructor(SmiteTeamGenerator) {
+        super();
         stg = SmiteTeamGenerator;
-        this.team = [];
     }
 
     add(player) {
-        this.team.push(player);
+        this.push(player);
     }
 
     get gods() {
         const gods = [];
-        this.team.forEach((player) => {
+        this.forEach((player) => {
             gods.push(player.god.name);
         });
         return gods;
     }
 
     set(index, player) {
-        this.team[index] = player;
+        this[index] = player;
     }
 
     get size() {
-        return this.team.length;
+        return this.length;
     }
 
     getPlayer(index) {
-        return this.team[index];
+        return this[index];
     }
 
     rerollPlayer(index) {
         const Chance = require('chance');
         const chance = new Chance();
-        const selected = this.team[index];
+        const selected = this[index];
         let rerolling;
         if (stg.forcingBalanced) {
             const taken = [];
-            this.team.forEach((player) => {
+            this.forEach((player) => {
                 taken.push(player.god);
             });
-            rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
+            rerolling = stg.makePlayer();
             let testing = true;
             while (testing) {
                 testing = false;
                 taken.forEach((god) => {
                     if (rerolling.god === god || rerolling.god === selected.god) {
-                        rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
+                        rerolling = stg.makePlayer();
                         testing = true;
                     }
                 });
@@ -54,17 +54,17 @@ class Team {
             this.set(index, rerolling);
         } else {
             const takenPositions = [];
-            this.team.forEach((player) => {
+            this.forEach((player) => {
                 takenPositions.push(player.god.position);
             });
             takenPositions.splice(index, 1);
-            rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
+            rerolling = stg.makePlayer();
             let testing = true;
             while (testing) {
                 testing = false;
                 takenPositions.forEach((position) => {
                     if (rerolling.god.position === position) {
-                        rerolling = stg.makePlayer(chance.integer({min: 0, max: 4}));
+                        rerolling = stg.makePlayer();
                         testing = true;
                     }
                 });
