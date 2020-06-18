@@ -13,7 +13,7 @@
     "mocha": "^8.0.1"
   },
   "name": "smite-builder",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Generate random teams and players with random builds to use with the Hi-Rez Studios game, Smite.",
   "main": "stg.js",
   "repository": "https://gitlab.com/Codazed/smite-builder",
