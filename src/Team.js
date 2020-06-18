@@ -31,8 +31,6 @@ class Team extends Array {
     }
 
     rerollPlayer(index) {
-        const Chance = require('chance');
-        const chance = new Chance();
         const selected = this[index];
         let rerolling;
         if (stg.forcingBalanced) {
