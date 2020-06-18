@@ -10,7 +10,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^7.2.0",
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0"
   },
   "name": "smite-builder",
   "version": "1.0.2",
@@ -21,6 +22,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "test": "mocha",
+    "coverage": "nyc yarn run test",
     "lint": "eslint ."
   }
 }

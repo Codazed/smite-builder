@@ -2,7 +2,6 @@ image: node:lts
 
 stages:
   - test
-  - lint
 
 before_script:
   - yarn install
@@ -14,7 +13,13 @@ job 0:
     - yarn run test
 
 job 1:
-  stage: lint
+  stage: test
+  allow_failure: true
+  script:
+    - yarn run coverage
+
+job 2:
+  stage: test
   allow_failure: true
   script:
     - yarn run lint
