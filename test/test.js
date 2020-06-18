@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
-const SmiteTeamGenerator = require('../stg.js');
-const stg = new SmiteTeamGenerator();
+const SmiteBuilder = require('../stg.js');
+const stg = new SmiteBuilder();
 const maxTests = 1000000;
 describe('stg', function() {
     this.timeout(60000);

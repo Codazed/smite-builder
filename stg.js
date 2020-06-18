@@ -11,7 +11,7 @@ const relics = [];
 
 const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
 
-class SmiteTeamGenerator {
+class SmiteBuilder {
     constructor() {
         this.forcingBalanced = false;
         this.forcingBoots = true;
@@ -263,4 +263,4 @@ function checkMasks(build) {
     return true;
 }
 
-module.exports = SmiteTeamGenerator;
+module.exports = SmiteBuilder;
