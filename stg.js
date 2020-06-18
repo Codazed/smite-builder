@@ -20,7 +20,7 @@ class SmiteBuilder {
     }
 
     get version() {
-        return '1.0.0';
+        return require('package.json').version;
     }
 
     get lists() {
