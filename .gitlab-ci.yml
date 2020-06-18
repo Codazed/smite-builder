@@ -1,18 +1,17 @@
-image: node:lts-stretch
+image: node:lts
 
 stages:
   - test
   - lint
 
 before_script:
-  - npm install -g yarn
   - yarn install
 
 job 0:
   stage: test
   allow_failure: false
   script:
-  - yarn run test
+    - yarn run test
 
 job 1:
   stage: lint
