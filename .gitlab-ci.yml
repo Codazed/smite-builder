@@ -6,19 +6,19 @@ stages:
 before_script:
   - yarn install
 
-job 0:
+mocha:
   stage: test
   allow_failure: false
   script:
     - yarn run test
 
-job 1:
+coverage:
   stage: test
   allow_failure: true
   script:
     - yarn run coverage
 
-job 2:
+eslint:
   stage: test
   allow_failure: true
   script:
