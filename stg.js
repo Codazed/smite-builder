@@ -176,7 +176,7 @@ class SmiteTeamGenerator {
             } else {
                 let offensiveNum = 0;
                 let defensiveNum = 0;
-                build.forEach(item => {
+                items.forEach(item => {
                     if (item.offensive) offensiveNum++;
                     if (item.defensive) defensiveNum++;
                 });
