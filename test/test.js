@@ -66,6 +66,15 @@ describe('stg', function() {
             assert.fail('Not all items were generated.');
         }
     });
+    it('Test reroll player method', function() {
+        let team = builder.generateTeam();
+        const clone = require('clone');
+        let initTeam = clone(team);
+        team.rerollPlayer(0);
+        if (initTeam === team) {
+            assert.fail('Team is identical after rerolling a player.');
+        }
+    });
     it('Check for incorrect items on certain gods', function() {
         for (let i = 0; i < maxTests; i++) {
             let player = builder.makePlayer();

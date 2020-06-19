@@ -33,7 +33,7 @@ class Team extends Array {
     rerollPlayer(index) {
         const selected = this[index];
         let rerolling;
-        if (stg.forcingBalanced) {
+        if (!stg.forcingBalanced) {
             const taken = [];
             this.forEach((player) => {
                 taken.push(player.god);
