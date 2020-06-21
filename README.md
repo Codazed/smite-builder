@@ -25,12 +25,16 @@ const builder = new SmiteBuilder();
 ```
 
 ## Usage
-Before you can use the module, you'll need to tell it to fetch the latest lists.
+Before you can use the module, you'll need to tell it to fetch the latest lists. You can use the promise API or async/await.
 
 ```js
-builder.getLists(function() {
-    // Now you can do stuff with the module in this callback function
-});
+builder.getLists().then(() => {});
+```
+or
+```js
+async function foo() {
+    await builder.getLists();
+}
 ```
 
 Keep in mind that without running the getLists function once, the module will have nothing to generate from.
