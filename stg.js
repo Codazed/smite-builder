@@ -32,35 +32,16 @@ class SmiteBuilder {
         };
     }
 
-    getLists(callback) {
+    async getLists() {
         const bootsUrl = 'https://api.smitebuilder.app/lists/boots.csv';
         const godsUrl = 'https://api.smitebuilder.app/lists/gods.csv';
         const itemsUrl = 'https://api.smitebuilder.app/lists/items.csv';
         const relicsUrl = 'https://api.smitebuilder.app/lists/relics.csv';
-        parseList(bootsUrl, (data) => {
-            data.pop();
-            data.forEach((boot) => {
-                boots.push(new Item(boot));
-            });
-            parseList(godsUrl, (data) => {
-                data.pop();
-                data.forEach((god) => {
-                    gods.push(new God(god));
-                });
-                parseList(itemsUrl, (data) => {
-                    data.pop();
-                    data.forEach((item) => {
-                        items.push(new Item(item));
-                    });
-                    parseList(relicsUrl, (data) => {
-                        data.forEach((relic) => {
-                            relics.push(relic);
-                        });
-                        callback();
-                    });
-                });
-            });
-        });
+        const a = await parseList(bootsUrl, boots, Item);
+        const b = await parseList(godsUrl, gods, God);
+        const c = await parseList(itemsUrl, items, Item);
+        const d = await parseList(relicsUrl, relics, null);
+        return Promise.all([a, b, c, d]);
     }
 
     generateTeam(options = {}) {
@@ -240,14 +221,15 @@ class SmiteBuilder {
     }
 }
 
-function parseList(listUrl, callback) {
+async function parseList(listUrl, list, obj) {
     const Papa = require('papaparse');
     const axios = require('axios');
-    (async () => {
-        axios.get(listUrl).then((response) => {
-            callback(Papa.parse(response.data, {header: true}).data);
-        });
-    })();
+    const response = await axios.get(listUrl);
+    const parsed = Papa.parse(response.data, {header: true}).data;
+    parsed.pop();
+    for (const item of parsed) {
+        list.push(obj !== null ? new obj(item) : item);
+    }
 }
 
 function checkMasks(build) {

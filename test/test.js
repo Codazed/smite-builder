@@ -6,8 +6,8 @@ const builder = new SmiteBuilder();
 const maxTests = 1000;
 describe('stg', function() {
     this.timeout(60000);
-    before(function(done) {
-        builder.getLists(done);
+    before(async function() {
+        await builder.getLists();
     });
     it('All gods should be generated at least once', function() {
         let gods = builder.lists.gods;
