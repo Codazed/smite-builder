@@ -122,18 +122,53 @@ class SmiteBuilder {
 
         const generation = [];
         if (god.name === 'Ratatoskr') {
-            const item = {
-                Name: 'Acorn of Yggdrasil',
-                Physical: true,
-                Magical: false,
-                ItemType: 'both',
-                Assassins: true,
-                Hunters: false,
-                Mages: false,
-                Warriors: false,
-                Guardians: false,
-            };
-            generation.push(new Item(item));
+            const items = [
+                {
+                    Name: 'Evergreen Acorn',
+                    Physical: true,
+                    Magical: false,
+                    ItemType: 'both',
+                    Assassins: true,
+                    Hunters: false,
+                    Mages: false,
+                    Warriors: false,
+                    Guardians: false,
+                },
+                {
+                    Name: 'Thickbark Acorn',
+                    Physical: true,
+                    Magical: false,
+                    ItemType: 'both',
+                    Assassins: true,
+                    Hunters: false,
+                    Mages: false,
+                    Warriors: false,
+                    Guardians: false,
+                },
+                {
+                    Name: 'Bristlebush Acorn',
+                    Physical: true,
+                    Magical: false,
+                    ItemType: 'both',
+                    Assassins: true,
+                    Hunters: false,
+                    Mages: false,
+                    Warriors: false,
+                    Guardians: false,
+                },
+                {
+                    Name: 'Thistlethorn Acorn',
+                    Physical: true,
+                    Magical: false,
+                    ItemType: 'both',
+                    Assassins: true,
+                    Hunters: false,
+                    Mages: false,
+                    Warriors: false,
+                    Guardians: false,
+                }
+            ];
+            generation.push(new Item(items[chance.integer({min: 0, max: items.length-1})]));
         } else {
             if (chance.integer({min: 0, max: 100}) > 35 && !this.forcingBoots) {
                 generation.push(getItem(god.position));

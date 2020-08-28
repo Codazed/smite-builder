@@ -3,7 +3,7 @@ const Chance = require('chance');
 const chance = new Chance();
 const SmiteBuilder = require('../stg.js');
 const builder = new SmiteBuilder();
-const maxTests = 1000;
+const maxTests = 10000;
 describe('stg', function() {
     this.timeout(60000);
     before(async function() {
@@ -131,7 +131,7 @@ describe('stg', function() {
         builder.lists.boots.forEach(boot => {
             boots.push(boot.name);
         });
-        boots.push('Acorn of Yggdrasil');
+        boots.push('Evergreen Acorn', 'Thickbark Acorn', 'Bristlebush Acorn', 'Thistlethorn Acorn');
         for (let i = 0; i < maxTests; i++) {
             let team = builder.generateTeam({size: 1, forceBoots: true});
             let player = team[0];
@@ -145,7 +145,7 @@ describe('stg', function() {
         builder.lists.boots.forEach(boot => {
             boots.push(boot.name);
         });
-        boots.push('Acorn of Yggdrasil');
+        boots.push('Evergreen Acorn', 'Thickbark Acorn', 'Bristlebush Acorn', 'Thistlethorn Acorn');
         for (let i = 0; i < maxTests; i++) {
             let team = builder.generateTeam({size: 1, forceBoots: false});
             let player = team[0];
