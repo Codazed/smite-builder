@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "boolean": "^3.0.1",
     "chance": "^1.1.6",
     "collections": "^5.1.11",
