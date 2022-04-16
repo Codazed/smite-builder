@@ -1,0 +1,807 @@
+[
+    {
+        "name": "Amulet of Silence",
+        "type": 2,
+        "style": 1,
+        "group": "heartward_amulet"
+    },
+    {
+        "name": "Amulet of the Stronghold",
+        "type": 2,
+        "style": 1,
+        "group": "heartward_amulet"
+    },
+    {
+        "name": "Ancile",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Animosity",
+        "type": 2,
+        "style": 2,
+        "group": "starter"
+    },
+    {
+        "name": "Archmage's Gem",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Arondight",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Asi",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Atalanta's Bow",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Bancroft's Talon",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Berserker's Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Blackthorn Hammer",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Blood-soaked Shroud",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Bloodforge",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Bluestone Brooch",
+        "type": 0,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Book of the Dead",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Book of Thoth",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Brawler's Beat Stick",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Breastplate of Determination",
+        "type": 2,
+        "style": 1,
+        "group": "breastplate_of_valor"
+    },
+    {
+        "name": "Breastplate of Vigilance",
+        "type": 2,
+        "style": 1,
+        "group": "breastplate_of_valor"
+    },
+    {
+        "name": "Bristlebush Acorn",
+        "type": 0,
+        "style": 1,
+        "requirements": {
+            "god": "Ratatoskr"
+        }
+    },
+    {
+        "name": "Bulwark of Hope",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Bumba's Hammer",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Bumba's Spear",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Caduceus Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Celestial Legion Helm",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Charon's Coin",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Chronos' Pendant",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Compassion",
+        "type": 2,
+        "style": 1,
+        "group": "starter"
+    },
+    {
+        "name": "Contagion",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Corrupted Bluestone",
+        "type": 0,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Death's Embrace",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Death's Temper",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Malicious Deathbringer",
+        "type": 0,
+        "style": 0,
+        "group": "deathbringer"
+    },
+    {
+        "name": "Envenomed Deathbringer",
+        "type": 0,
+        "style": 0,
+        "group": "deathbringer"
+    },
+    {
+        "name": "Demonic Grip",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Devourer's Gauntlet",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Diamond Arrow",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Dominance",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Doom Orb",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Emperor's Armor",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Ethereal Staff",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Evergreen Acorn",
+        "type": 0,
+        "style": 1,
+        "requirements": {
+            "god": "Ratatoskr"
+        }
+    },
+    {
+        "name": "Fail-not",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Frostbound Hammer",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Gauntlet of Thebes",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Gem of Focus",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Gem of Isolation",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Genji's Guard",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Gladiator's Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Golden Blade",
+        "type": 0,
+        "style": 0,
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Hastened Katana",
+        "type": 0,
+        "style": 0,
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Hastened Ring",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Hero's Axe",
+        "type": 2,
+        "style": 2,
+        "group": "starter"
+    },
+    {
+        "name": "Hide of the Nemean Lion",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Hide of the Urchin",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Hunter's Cowl",
+        "type": 0,
+        "style": 0,
+        "group": "starter",
+        "requirements": {
+            "type": ["hunter"]
+        }
+    },
+    {
+        "name": "Hydra's Lament",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Ichaival",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Infused Sigil",
+        "type": 0,
+        "style": 1,
+        "group": "starter",
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Jade Emperor's Crown",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Jotunn's Ferocity",
+        "type": 0,
+        "style": 0,
+        "group": "jotunns_wrath"
+    },
+    {
+        "name": "Jotunn's Vigor",
+        "type": 0,
+        "style": 0,
+        "group": "jotunns_wrath"
+    },
+    {
+        "name": "Leader's Cowl",
+        "type": 0,
+        "style": 0,
+        "group": "starter",
+        "requirements": {
+            "type": ["hunter"]
+        }
+    },
+    {
+        "name": "Lono's Mask",
+        "type": 2,
+        "style": 1,
+        "requirements": {
+            "type": ["assassin", "hunter", "mage"]
+        }
+    },
+    {
+        "name": "Lotus Crown",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Magi's Cloak",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Mail of Renewal",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Malice",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Manikin Hidden Blade",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Manikin Mace",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Mantle of Discord",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Masamune",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Midgardian Mail",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Mystical Mail",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Obsidian Shard",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Odysseus' Bow",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Oni Hunter's Garb",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Ornate Arrow",
+        "type": 2,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Pendulum of Ages",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Pestilence",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Poisoned Star",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Polynomicon",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Pridwen",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Protector of the Jungle",
+        "type": 2,
+        "style": 2,
+        "group": "starter"
+    },
+    {
+        "name": "Pythagorem's Piece",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Qin's Sais",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Rage",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Rangda's Mask",
+        "type": 2,
+        "style": 1,
+        "requirements": {
+            "type": ["warrior", "guardian"]
+        }
+    },
+    {
+        "name": "Relic Dagger",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Ring of Hecate",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Rod of Asclepius",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Calamitous Rod of Tahuti",
+        "type": 1,
+        "style": 0,
+        "group": "rod_of_tahuti"
+    },
+    {
+        "name": "Nimble Rod of Tahuti",
+        "type": 1,
+        "style": 0,
+        "group": "rod_of_tahuti"
+    },
+    {
+        "name": "Runeforged Hammer",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Runic Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Sacrificial Shroud",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "Sage's Stone",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Seer of the Jungle",
+        "type": 2,
+        "style": 2,
+        "group": "starter"
+    },
+    {
+        "name": "Sentinel's Boon",
+        "type": 2,
+        "style": 1,
+        "group": "starter"
+    },
+    {
+        "name": "Sentinel's Embrace",
+        "type": 2,
+        "style": 1,
+        "group": "starter"
+    },
+    {
+        "name": "Serrated Edge",
+        "type": 0,
+        "style": 0,
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Shadowsteel Shuriken",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Shield of Regrowth",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Shifter's Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Shogun's Kusari",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Sigil of The Old Guard",
+        "type": 0,
+        "style": 1,
+        "group": "starter",
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Silverbranch Bow",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Soul Gem",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Soul Reaver",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Sovereignty",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Spartan Flag",
+        "type": 2,
+        "style": 1,
+        "group": "starter",
+        "requirements": {
+            "type": ["warrior", "guardian"]
+        }
+    },
+    {
+        "name": "Spear of Desolation",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Spear of the Magus",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Spectral Armor",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Spirit Robe",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Staff Of Myrddin",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Stone Cutting Sword",
+        "type": 0,
+        "style": 0,
+        "requirements": {
+            "type": ["assassin", "warrior"]
+        }
+    },
+    {
+        "name": "Stone of Binding",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Stone of Fal",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Stone of Gaia",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Sundering Axe",
+        "type": 2,
+        "style": 2,
+        "group": "starter"
+    },
+    {
+        "name": "Tainted Amulet",
+        "type": 2,
+        "style": 1,
+        "group": "starter"
+    },
+    {
+        "name": "Tainted Breastplate",
+        "type": 2,
+        "style": 1,
+        "group": "starter"
+    },
+    {
+        "name": "Talisman of Energy",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Telkhines Ring",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "The Alternate Timeline",
+        "type": 1,
+        "style": 0,
+        "group": "starter"
+    },
+    {
+        "name": "The Crusher",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "The Executioner",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "The Sledge",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Thickbark Acorn",
+        "type": 0,
+        "style": 1,
+        "requirements": {
+            "god": "Ratatoskr"
+        }
+    },
+    {
+        "name": "Thistlethorn Acorn",
+        "type": 0,
+        "style": 0,
+        "requirements": {
+            "god": "Ratatoskr"
+        }
+    },
+    {
+        "name": "Titan's Bane",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Toxic Blade",
+        "type": 2,
+        "style": 0
+    },
+    {
+        "name": "Transcendence",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Typhon's Fang",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Tyrannical Plate Helm",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "Void Shield",
+        "type": 0,
+        "style": 1
+    },
+    {
+        "name": "Void Stone",
+        "type": 1,
+        "style": 1
+    },
+    {
+        "name": "War Banner",
+        "type": 2,
+        "style": 1,
+        "group": "starter",
+        "requirements": {
+            "type": ["warrior", "guardian"]
+        }
+    },
+    {
+        "name": "Warlock's Staff",
+        "type": 1,
+        "style": 0
+    },
+    {
+        "name": "Wind Demon",
+        "type": 0,
+        "style": 0
+    },
+    {
+        "name": "Winged Blade",
+        "type": 2,
+        "style": 1
+    },
+    {
+        "name": "Witchblade",
+        "type": 2,
+        "style": 1
+    }
+]
