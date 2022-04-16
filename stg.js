@@ -16,10 +16,10 @@ const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
 
 class SmiteBuilder {
     constructor(
-        godsList = fs.readFileSync("lists/gods.json").toString(),
-        itemsList = fs.readFileSync("lists/items.json").toString(),
-        relicsList = fs.readFileSync("lists/relics.json").toString()
-        ) {
+        godsList = fs.readFileSync('lists/gods.json').toString(),
+        itemsList = fs.readFileSync('lists/items.json').toString(),
+        relicsList = fs.readFileSync('lists/relics.json').toString()
+    ) {
         this.forcingBalanced = false;
         this.warriorsOffensive = true;
         this.buildType = 0;
@@ -170,7 +170,7 @@ class SmiteBuilder {
     }
 
     getRelics() {
-        const chanceParam = {min: 0, max: relics.length - 1}
+        const chanceParam = {min: 0, max: relics.length - 1};
         const relic1 = relics[chance.integer(chanceParam)];
         let relic2 = relics[chance.integer(chanceParam)];
         while (relic1.group === relic2.group) {
