@@ -1,25 +1,50 @@
-const {boolean} = require('boolean');
 class Item {
     constructor(itemObject) {
-        this.name = itemObject.Name;
-        this.physical = boolean(itemObject.Physical);
-        this.magical = boolean(itemObject.Magical);
-        this.type = itemObject.ItemType.toLowerCase();
-        this.availability = {
-            assassin: boolean(itemObject.Assassins),
-            hunter: boolean(itemObject.Hunters),
-            mage: boolean(itemObject.Mages),
-            warrior: boolean(itemObject.Warriors),
-            guardian: boolean(itemObject.Guardians)
-        };
-    }
+        this.name = itemObject.name;
+        this.physical = itemObject.type === 0 || itemObject.type === 2
+        this.magical = itemObject.type === 1 || itemObject.type === 2
 
-    get mask() {
-        return ['Lono\'s Mask', 'Rangda\'s Mask', 'Bumba\'s Mask'].includes(this.name);
+        if (itemObject.style === 0) {
+            this.type = "offense"
+        } else if (itemObject.style === 1) {
+            this.type = "defense"
+        } else if (itemObject.style === 2) {
+            this.type = "both"
+        }
+
+        this.availability = {
+            assassin: this.physical,
+            hunter: this.physical,
+            mage: this.magical,
+            warrior: this.physical,
+            guardian: this.magical
+        };
+
+        if (itemObject.requirements) {
+            this.requirements = itemObject.requirements
+
+            if (itemObject.requirements.type) {
+                this.availability = {
+                    assassin: itemObject.requirements.type.includes("assassin"),
+                    hunter: itemObject.requirements.type.includes("hunter"),
+                    mage: itemObject.requirements.type.includes("mage"),
+                    warrior: itemObject.requirements.type.includes("warrior"),
+                    guardian: itemObject.requirements.type.includes("guardian")
+                }
+            }
+        }
     }
 
     available(god) {
-        return this.availability[god.position.toLowerCase()];
+        if (this.requirements && this.requirements.god) {
+            if (this.requirements.god.includes(god.name)) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return this.availability[god.position.toLowerCase()];
+        }
     }
 
     get offensive() {
