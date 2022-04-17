@@ -102,8 +102,14 @@ class SmiteBuilder {
     getItems(god, num = 6) {
         let availableItems = items.filter(item => item.available(god));
 
+        let usedGroups = [];
+
         function getItem() {
+            availableItems = availableItems.filter(item => !usedGroups.includes(item.group));
             let item = availableItems.splice(chance.integer({min: 0, max: availableItems.length - 1}), 1)[0];
+            if (item.group) {
+                usedGroups.push(item.group);
+            }
             return item;
         }
 

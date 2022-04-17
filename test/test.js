@@ -83,18 +83,51 @@ describe('stg', function() {
             });
         }
     });
-    it('Check for multiple masks on single build', function() {
+    it('Check for duplicate items on a single build', function() {
         for (let i = 0; i < maxTests; i++) {
             let player = builder.makePlayer();
             let build = player.build.items;
-            let maskCount = 0;
+            let items = [];
             build.forEach(item => {
-                if (['Bumba\'s Mask', 'Lono\'s Mask', 'Rangda\'s Mask'].includes(item.name)) {
-                    maskCount++;
+                if (items.includes(item)) {
+                    assert.fail(`There is more than one group [${item.name}] item on a build.\nOffending build: ${JSON.stringify(player, '', ' ')}`);
+                } else {
+                    items.push(item);
                 }
             });
-            if (maskCount > 1) {
-                assert.fail('There is more than one mask on a build.\nOffending build: ' + JSON.stringify(player, '', ' '));
+        }
+    });
+    it('Check for duplicate group items on a single build', function() {
+        for (let i = 0; i < maxTests; i++) {
+            let player = builder.makePlayer();
+            let build = player.build.items;
+            let groups = [];
+            build.forEach(item => {
+                if (item.group) {
+                    if (groups.includes(item.group)) {
+                        assert.fail(`There is more than one group [${item.group}] item on a build.\nOffending build: ${JSON.stringify(player, '', ' ')}`);
+                    } else {
+                        groups.push(item.group);
+                    }
+                }
+            });
+        }
+    });
+    it('Check for duplicate relics on a single build', function() {
+        for (let i = 0; i < maxTests; i++) {
+            let player = builder.makePlayer();
+            let build = player.build;
+            if (build.relics[0] === build.relics[1]) {
+                assert.fail(`There is more than one [${build.relics[0].name}] relic on a build.\nOffending build: ${JSON.stringify(player, '', ' ')}`);
+            }
+        }
+    });
+    it('Check for duplicate relic groups on a single build', function() {
+        for (let i = 0; i < maxTests; i++) {
+            let player = builder.makePlayer();
+            let build = player.build;
+            if ((build.relics[0].group && build.relics[1].group) && (build.relics[0].group === build.relics[1].group)) {
+                assert.fail(`There is more than one [${build.relics[0].group}] relic on a build.\nOffending build: ${JSON.stringify(player, '', ' ')}`);
             }
         }
     });
