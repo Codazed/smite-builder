@@ -1,10 +1,13 @@
 const Chance = require('chance');
+const fs = require('fs');
+
 const chance = new Chance();
+
+// Internal class imports
 const Item = require('./src/Item.js');
 const God = require('./src/God.js');
 const Team = require('./src/Team.js');
 
-const boots = [];
 const gods = [];
 const items = [];
 const relics = [];
@@ -12,11 +15,22 @@ const relics = [];
 const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
 
 class SmiteBuilder {
-    constructor() {
+    constructor(
+        godsList = fs.readFileSync('lists/gods.json').toString(),
+        itemsList = fs.readFileSync('lists/items.json').toString(),
+        relicsList = fs.readFileSync('lists/relics.json').toString()
+    ) {
         this.forcingBalanced = false;
-        this.forcingBoots = true;
         this.warriorsOffensive = true;
         this.buildType = 0;
+
+        this.godsList = godsList;
+        this.itemsList = itemsList;
+        this.relicsList = relicsList;
+
+        parseList(this.godsList, gods, God);
+        parseList(this.itemsList, items, Item);
+        parseList(this.relicsList, relics, null);
     }
 
     get version() {
@@ -25,23 +39,10 @@ class SmiteBuilder {
 
     get lists() {
         return {
-            'boots': boots,
             'gods': gods,
             'items': items,
             'relics': relics,
         };
-    }
-
-    async getLists() {
-        const bootsUrl = 'https://api.smitebuilder.app/lists/boots.csv';
-        const godsUrl = 'https://api.smitebuilder.app/lists/gods.csv';
-        const itemsUrl = 'https://api.smitebuilder.app/lists/items.csv';
-        const relicsUrl = 'https://api.smitebuilder.app/lists/relics.csv';
-        const a = await parseList(bootsUrl, boots, Item);
-        const b = await parseList(godsUrl, gods, God);
-        const c = await parseList(itemsUrl, items, Item);
-        const d = await parseList(relicsUrl, relics, null);
-        return Promise.all([a, b, c, d]);
     }
 
     generateTeam(options = {}) {
@@ -100,85 +101,18 @@ class SmiteBuilder {
 
     getItems(god, num = 6) {
         let availableItems = items.filter(item => item.available(god));
-        let availableBoots = boots.filter(boot => boot.available(god));
 
         function getItem() {
-            let item = availableItems.splice(
-                chance.integer({min: 0, max: availableItems.length - 1}), 1)[0];
-            if (item.mask) {
-                availableItems.forEach((item, index) => {
-                    if (item.mask) {
-                        availableItems.splice(index, 1);
-                    }
-                });
-            }
+            let item = availableItems.splice(chance.integer({min: 0, max: availableItems.length - 1}), 1)[0];
             return item;
         }
 
-        function getBoot() {
-            return availableBoots.splice(
-                chance.integer({min: 0, max: availableBoots.length - 1}), 1)[0];
-        }
-
         const generation = [];
-        if (god.name === 'Ratatoskr') {
-            const items = [
-                {
-                    Name: 'Evergreen Acorn',
-                    Physical: true,
-                    Magical: false,
-                    ItemType: 'both',
-                    Assassins: true,
-                    Hunters: false,
-                    Mages: false,
-                    Warriors: false,
-                    Guardians: false,
-                },
-                {
-                    Name: 'Thickbark Acorn',
-                    Physical: true,
-                    Magical: false,
-                    ItemType: 'both',
-                    Assassins: true,
-                    Hunters: false,
-                    Mages: false,
-                    Warriors: false,
-                    Guardians: false,
-                },
-                {
-                    Name: 'Bristlebush Acorn',
-                    Physical: true,
-                    Magical: false,
-                    ItemType: 'both',
-                    Assassins: true,
-                    Hunters: false,
-                    Mages: false,
-                    Warriors: false,
-                    Guardians: false,
-                },
-                {
-                    Name: 'Thistlethorn Acorn',
-                    Physical: true,
-                    Magical: false,
-                    ItemType: 'both',
-                    Assassins: true,
-                    Hunters: false,
-                    Mages: false,
-                    Warriors: false,
-                    Guardians: false,
-                }
-            ];
-            generation.push(new Item(items[chance.integer({min: 0, max: items.length-1})]));
-        } else {
-            if (chance.integer({min: 0, max: 100}) > 35 && !this.forcingBoots) {
-                generation.push(getItem(god.position));
-            } else {
-                generation.push(getBoot(god.position));
-            }
-        }
+
         while (generation.length < num) {
             generation.push(getItem(god.position));
         }
+
         return generation;
     }
 
@@ -186,8 +120,6 @@ class SmiteBuilder {
         let items = build;
         while (true) {
             if (!god.checkBuild(build)) {
-                items = this.getItems(god);
-            } else if (!checkMasks(build)) {
                 items = this.getItems(god);
             } else {
                 let offensiveNum = 0;
@@ -238,10 +170,11 @@ class SmiteBuilder {
     }
 
     getRelics() {
-        const relic1 = relics[chance.integer({min: 0, max: relics.length})];
-        let relic2 = relics[chance.integer({min: 0, max: relics.length})];
-        while (relic1 === relic2) {
-            relic2 = relics[chance.integer({min: 0, max: relics.length})];
+        const chanceParam = {min: 0, max: relics.length - 1};
+        const relic1 = relics[chance.integer(chanceParam)];
+        let relic2 = relics[chance.integer(chanceParam)];
+        while (relic1.group === relic2.group) {
+            relic2 = relics[chance.integer(chanceParam)];
         }
         return [relic1, relic2];
     }
@@ -256,28 +189,11 @@ class SmiteBuilder {
     }
 }
 
-async function parseList(listUrl, list, obj) {
-    const Papa = require('papaparse');
-    const axios = require('axios');
-    const response = await axios.get(listUrl);
-    const parsed = Papa.parse(response.data, {header: true}).data;
-    parsed.pop();
+function parseList(listCsvStr, list, obj) {
+    const parsed = JSON.parse(listCsvStr);
     for (const item of parsed) {
         list.push(obj !== null ? new obj(item) : item);
     }
-}
-
-function checkMasks(build) {
-    let num = 0;
-    build.forEach((item) => {
-        if (item.mask) {
-            num++;
-            if (num > 1) {
-                return false;
-            }
-        }
-    });
-    return true;
 }
 
 module.exports = SmiteBuilder;

@@ -1,21 +1,17 @@
 {
   "dependencies": {
-    "axios": "^0.19.2",
-    "boolean": "^3.0.1",
-    "chance": "^1.1.6",
-    "collections": "^5.1.11",
-    "knuth-shuffle-seeded": "^1.0.6",
-    "papaparse": "^5.2.0"
+    "chance": "^1.1.8",
+    "knuth-shuffle-seeded": "^1.0.6"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "clone": "^2.1.2",
-    "eslint": "^7.2.0",
-    "mocha": "^8.0.1",
+    "chai": "^4.3.6",
+    "clone": "2.1.2",
+    "eslint": "^8.13.0",
+    "mocha": "^9.2.2",
     "nyc": "^15.1.0"
   },
   "name": "smite-builder",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Generate random teams and players with random builds to use with the Hi-Rez Studios game, Smite.",
   "main": "stg.js",
   "repository": "https://gitlab.com/Codazed/smite-builder",

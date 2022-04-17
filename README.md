@@ -25,18 +25,21 @@ const builder = new SmiteBuilder();
 ```
 
 ## Usage
-Before you can use the module, you'll need to tell it to fetch the latest lists. You can use the promise API or async/await.
+As of version 2.0.0, the API that previous versions have used to pull the lists has been nixed.
+I had originally created this API to prevent CORS issues for software downstream that utilize this package.
+I have now decided that such a thing is no longer my responsibility to supply, and as such, this package
+will utilize either the in-built lists shipped with each version of itself, or lists that YOU give it in the same
+JSON format.
 
+As you can probably guess, it is possible for the lists to become out of sync with whatever version is in master
+on this repo. I will keep the lists in master on this repo up to date as often as I can.
+(Keep in mind this is a hobby project and I'm currently the only maintainer.)
+I may not *always* publish package updates to NPM when I update the lists. Because of this, I encourage you to
+write your own API that fetches the latest lists from master and then gives it to the generator. Provide the lists
+to the generator like this:
 ```js
-builder.getLists().then(() => {});
-```
-or
-```js
-async function foo() {
-    await builder.getLists();
-}
+const builder = new SmiteBuilder(godsListJSONString, itemsListJSONString, relicsListJSONString)
+// Where each of the above parameters is a string representing each list in JSON format
 ```
 
-Keep in mind that without running the getLists function once, the module will have nothing to generate from.
-
-For specific usage instructions, ~~please consult the documentation~~ (coming soon).
+For specific usage instructions, ~~please consult the documentation~~ (coming maybe).

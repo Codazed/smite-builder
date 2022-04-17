@@ -6,9 +6,6 @@ const builder = new SmiteBuilder();
 const maxTests = 10000;
 describe('stg', function() {
     this.timeout(60000);
-    before(async function() {
-        await builder.getLists();
-    });
     it('All gods should be generated at least once', function() {
         let gods = builder.lists.gods;
         let generatedGods = [];
@@ -125,35 +122,6 @@ describe('stg', function() {
                 });
             });
         }
-    });
-    it('Check for always boots, forceBoots=true', function() {
-        let boots= [];
-        builder.lists.boots.forEach(boot => {
-            boots.push(boot.name);
-        });
-        boots.push('Evergreen Acorn', 'Thickbark Acorn', 'Bristlebush Acorn', 'Thistlethorn Acorn');
-        for (let i = 0; i < maxTests; i++) {
-            let team = builder.generateTeam({size: 1, forceBoots: true});
-            let player = team[0];
-            if (!player.build.items.some(item => boots.includes(item.name))) {
-                assert.fail('Got a build without a boot item.\nOffending build: ' + JSON.stringify(player.build.items, null, ' '));
-            }
-        }
-    });
-    it('Check for not always boots, forceBoots=false', function() {
-        let boots= [];
-        builder.lists.boots.forEach(boot => {
-            boots.push(boot.name);
-        });
-        boots.push('Evergreen Acorn', 'Thickbark Acorn', 'Bristlebush Acorn', 'Thistlethorn Acorn');
-        for (let i = 0; i < maxTests; i++) {
-            let team = builder.generateTeam({size: 1, forceBoots: false});
-            let player = team[0];
-            if (!player.build.items.some(item => boots.includes(item.name))) {
-                return;
-            }
-        }
-        assert.fail('Every build generated out of ' + maxTests + ' generations contained a boot item.');
     });
     it('Check for balanced team, no duplicate positions, forceBalanced=true', function() {
         let positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];

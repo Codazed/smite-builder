@@ -1,0 +1,478 @@
+[
+    {
+        "name": "Achilles",
+        "type": "warrior"
+    },
+    {
+        "name": "Agni",
+        "type": "mage"
+    },
+    {
+        "name": "Ah Muzen Cab",
+        "type": "hunter"
+    },
+    {
+        "name": "Ah Puch",
+        "type": "mage"
+    },
+    {
+        "name": "Amaterasu",
+        "type": "warrior"
+    },
+    {
+        "name": "Anhur",
+        "type": "hunter"
+    },
+    {
+        "name": "Anubis",
+        "type": "mage"
+    },
+    {
+        "name": "Ao Kuang",
+        "type": "mage"
+    },
+    {
+        "name": "Aphrodite",
+        "type": "mage"
+    },
+    {
+        "name": "Apollo",
+        "type": "hunter"
+    },
+    {
+        "name": "Arachne",
+        "type": "assassin"
+    },
+    {
+        "name": "Ares",
+        "type": "guardian"
+    },
+    {
+        "name": "Artemis",
+        "type": "hunter"
+    },
+    {
+        "name": "Artio",
+        "type": "guardian"
+    },
+    {
+        "name": "Athena",
+        "type": "guardian"
+    },
+    {
+        "name": "Atlas",
+        "type": "guardian"
+    },
+    {
+        "name": "Awilix",
+        "type": "assassin"
+    },
+    {
+        "name": "Baba Yaga",
+        "type": "mage"
+    },
+    {
+        "name": "Bacchus",
+        "type": "guardian"
+    },
+    {
+        "name": "Bakasura",
+        "type": "assassin"
+    },
+    {
+        "name": "Baron Samedi",
+        "type": "mage"
+    },
+    {
+        "name": "Bastet",
+        "type": "assassin"
+    },
+    {
+        "name": "Bellona",
+        "type": "warrior"
+    },
+    {
+        "name": "Cabrakan",
+        "type": "guardian"
+    },
+    {
+        "name": "Camazotz",
+        "type": "assassin"
+    },
+    {
+        "name": "Cerberus",
+        "type": "guardian"
+    },
+    {
+        "name": "Cernunnos",
+        "type": "hunter"
+    },
+    {
+        "name": "Chaac",
+        "type": "warrior"
+    },
+    {
+        "name": "Chang'e",
+        "type": "mage"
+    },
+    {
+        "name": "Charybdis",
+        "type": "hunter"
+    },
+    {
+        "name": "Chernobog",
+        "type": "hunter"
+    },
+    {
+        "name": "Chiron",
+        "type": "hunter"
+    },
+    {
+        "name": "Chronos",
+        "type": "mage"
+    },
+    {
+        "name": "Cliodhna",
+        "type": "assassin"
+    },
+    {
+        "name": "Cthulhu",
+        "type": "guardian"
+    },
+    {
+        "name": "Cu Chulainn",
+        "type": "warrior"
+    },
+    {
+        "name": "Cupid",
+        "type": "hunter"
+    },
+    {
+        "name": "Da Ji",
+        "type": "assassin"
+    },
+    {
+        "name": "Danzaburou",
+        "type": "hunter"
+    },
+    {
+        "name": "Discordia",
+        "type": "mage"
+    },
+    {
+        "name": "Erlang Shen",
+        "type": "warrior"
+    },
+    {
+        "name": "Eset",
+        "type": "mage"
+    },
+    {
+        "name": "Fafnir",
+        "type": "guardian"
+    },
+    {
+        "name": "Fenrir",
+        "type": "assassin"
+    },
+    {
+        "name": "Freya",
+        "type": "mage"
+    },
+    {
+        "name": "Ganesha",
+        "type": "guardian"
+    },
+    {
+        "name": "Geb",
+        "type": "guardian"
+    },
+    {
+        "name": "Gilgamesh",
+        "type": "warrior"
+    },
+    {
+        "name": "Guan Yu",
+        "type": "warrior"
+    },
+    {
+        "name": "Hachiman",
+        "type": "hunter"
+    },
+    {
+        "name": "Hades",
+        "type": "mage"
+    },
+    {
+        "name": "He Bo",
+        "type": "mage"
+    },
+    {
+        "name": "Heimdallr",
+        "type": "hunter"
+    },
+    {
+        "name": "Hel",
+        "type": "mage"
+    },
+    {
+        "name": "Hera",
+        "type": "mage"
+    },
+    {
+        "name": "Hercules",
+        "type": "warrior"
+    },
+    {
+        "name": "Horus",
+        "type": "warrior"
+    },
+    {
+        "name": "Hou Yi",
+        "type": "hunter"
+    },
+    {
+        "name": "Hun Batz",
+        "type": "assassin"
+    },
+    {
+        "name": "Izanami",
+        "type": "hunter"
+    },
+    {
+        "name": "Janus",
+        "type": "mage"
+    },
+    {
+        "name": "Jing Wei",
+        "type": "hunter"
+    },
+    {
+        "name": "Jormungandr",
+        "type": "guardian"
+    },
+    {
+        "name": "Kali",
+        "type": "assassin"
+    },
+    {
+        "name": "Khepri",
+        "type": "guardian"
+    },
+    {
+        "name": "King Arthur",
+        "type": "warrior"
+    },
+    {
+        "name": "Kukulkan",
+        "type": "mage"
+    },
+    {
+        "name": "Kumbhakarna",
+        "type": "guardian"
+    },
+    {
+        "name": "Kuzenbo",
+        "type": "guardian"
+    },
+    {
+        "name": "Loki",
+        "type": "assassin"
+    },
+    {
+        "name": "Medusa",
+        "type": "hunter"
+    },
+    {
+        "name": "Mercury",
+        "type": "assassin"
+    },
+    {
+        "name": "Merlin",
+        "type": "mage"
+    },
+    {
+        "name": "Morgan Le Fay",
+        "type": "mage"
+    },
+    {
+        "name": "Mulan",
+        "type": "warrior"
+    },
+    {
+        "name": "Ne Zha",
+        "type": "assassin"
+    },
+    {
+        "name": "Neith",
+        "type": "hunter"
+    },
+    {
+        "name": "Nemesis",
+        "type": "assassin"
+    },
+    {
+        "name": "Nike",
+        "type": "warrior"
+    },
+    {
+        "name": "Nox",
+        "type": "mage"
+    },
+    {
+        "name": "Nu Wa",
+        "type": "mage"
+    },
+    {
+        "name": "Odin",
+        "type": "warrior"
+    },
+    {
+        "name": "Olorun",
+        "type": "mage"
+    },
+    {
+        "name": "Osiris",
+        "type": "warrior"
+    },
+    {
+        "name": "Pele",
+        "type": "assassin"
+    },
+    {
+        "name": "Persephone",
+        "type": "mage"
+    },
+    {
+        "name": "Poseidon",
+        "type": "mage"
+    },
+    {
+        "name": "Ra",
+        "type": "mage"
+    },
+    {
+        "name": "Raijin",
+        "type": "mage"
+    },
+    {
+        "name": "Rama",
+        "type": "hunter"
+    },
+    {
+        "name": "Ratatoskr",
+        "type": "assassin"
+    },
+    {
+        "name": "Ravana",
+        "type": "assassin"
+    },
+    {
+        "name": "Scylla",
+        "type": "mage"
+    },
+    {
+        "name": "Serqet",
+        "type": "assassin"
+    },
+    {
+        "name": "Set",
+        "type": "assassin"
+    },
+    {
+        "name": "Shiva",
+        "type": "warrior"
+    },
+    {
+        "name": "Skadi",
+        "type": "hunter"
+    },
+    {
+        "name": "Sobek",
+        "type": "guardian"
+    },
+    {
+        "name": "Sol",
+        "type": "mage"
+    },
+    {
+        "name": "Sun Wukong",
+        "type": "warrior"
+    },
+    {
+        "name": "Susano",
+        "type": "assassin"
+    },
+    {
+        "name": "Sylvanus",
+        "type": "guardian"
+    },
+    {
+        "name": "Terra",
+        "type": "guardian"
+    },
+    {
+        "name": "Thanatos",
+        "type": "assassin"
+    },
+    {
+        "name": "The Morrigan",
+        "type": "mage"
+    },
+    {
+        "name": "Thor",
+        "type": "assassin"
+    },
+    {
+        "name": "Thoth",
+        "type": "mage"
+    },
+    {
+        "name": "Tiamat",
+        "type": "mage"
+    },
+    {
+        "name": "Tsukuyomi",
+        "type": "assassin"
+    },
+    {
+        "name": "Tyr",
+        "type": "warrior"
+    },
+    {
+        "name": "Ullr",
+        "type": "hunter"
+    },
+    {
+        "name": "Vamana",
+        "type": "warrior"
+    },
+    {
+        "name": "Vulcan",
+        "type": "mage"
+    },
+    {
+        "name": "Xbalanque",
+        "type": "hunter"
+    },
+    {
+        "name": "Xing Tian",
+        "type": "guardian"
+    },
+    {
+        "name": "Yemoja",
+        "type": "guardian"
+    },
+    {
+        "name": "Ymir",
+        "type": "guardian"
+    },
+    {
+        "name": "Zeus",
+        "type": "mage"
+    },
+    {
+        "name": "Zhong Kui",
+        "type": "mage"
+    }
+]

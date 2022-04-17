@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Aegis of Acceleration",
+        "group": "aegis_amulet"
+    },
+    {
+        "name": "Aegis of Judgement",
+        "group": "aegis_amulet"
+    },
+    {
+        "name": "Belt of the Berserker",
+        "group": "belt_of_frenzy"
+    },
+    {
+        "name": "Belt of Insatiable Hunger",
+        "group": "belt_of_frenzy"
+    },
+    {
+        "name": "Scorching Blink Rune",
+        "group": "blink_rune"
+    },
+    {
+        "name": "Corrupted Blink Rune",
+        "group": "blink_rune"
+    },
+    {
+        "name": "Bracer of Illumination",
+        "group": "bracer_of_radiance"
+    },
+    {
+        "name": "Bracer of Brilliance",
+        "group": "bracer_of_radiance"
+    },
+    {
+        "name": "Drowned Ankh",
+        "group": "cursed_ankh"
+    },
+    {
+        "name": "Blighted Ankh",
+        "group": "cursed_ankh"
+    },
+    {
+        "name": "Entangling Wings",
+        "group": "heavenly_wings"
+    },
+    {
+        "name": "Hastened Wings",
+        "group": "heavenly_wings"
+    },
+    {
+        "name": "Emblem of Increasing Peril",
+        "group": "horrific_emblem"
+    },
+    {
+        "name": "Emblem of Trembling Terror",
+        "group": "horrific_emblem"
+    },
+    {
+        "name": "Fortifying Shell",
+        "group": "magic_shell"
+    },
+    {
+        "name": "Phantom Shell",
+        "group": "magic_shell"
+    },
+    {
+        "name": "Cloak of the Avatar",
+        "group": "cloak_of_meditation"
+    },
+    {
+        "name": "Cloak of the Ascetic",
+        "group": "cloak_of_meditation"
+    },
+    {
+        "name": "Chaotic Beads",
+        "group": "purification_beads"
+    },
+    {
+        "name": "Temporal Beads",
+        "group": "purification_beads"
+    },
+    {
+        "name": "Thorns of Overgrowth",
+        "group": "shield_of_thorns"
+    },
+    {
+        "name": "Thorns of Sapping Strength",
+        "group": "shield_of_thorns"
+    },
+    {
+        "name": "Sundering Blast",
+        "group": "sundering_spear"
+    },
+    {
+        "name": "Sundering Siphon",
+        "group": "sundering_spear"
+    },
+    {
+        "name": "Persistent Teleport",
+        "group": "teleport_fragment"
+    },
+    {
+        "name": "Heroic Teleport",
+        "group": "teleport_fragment"
+    }
+]

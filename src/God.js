@@ -3,8 +3,8 @@ const magicals = ['Mage', 'Guardian'];
 
 class God {
     constructor(godObject) {
-        this.name = godObject.Name;
-        this.position = godObject.Type;
+        this.name = godObject.name;
+        this.position = godObject.type;
     }
 
     checkBuild(build) {
