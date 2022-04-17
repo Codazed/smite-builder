@@ -1,5 +1,4 @@
 const Chance = require('chance');
-const fs = require('fs');
 
 const chance = new Chance();
 
@@ -16,10 +15,11 @@ const positions = ['assassin', 'hunter', 'mage', 'warrior', 'guardian'];
 
 class SmiteBuilder {
     constructor(
-        godsList = fs.readFileSync('lists/gods.json').toString(),
-        itemsList = fs.readFileSync('lists/items.json').toString(),
-        relicsList = fs.readFileSync('lists/relics.json').toString()
+        godsList = require('./lists/gods.json'),
+        itemsList = require('./lists/items.json'),
+        relicsList = require('./lists/relics.json')
     ) {
+
         this.forcingBalanced = false;
         this.warriorsOffensive = true;
         this.buildType = 0;
@@ -189,8 +189,13 @@ class SmiteBuilder {
     }
 }
 
-function parseList(listCsvStr, list, obj) {
-    const parsed = JSON.parse(listCsvStr);
+function parseList(listInput, list, obj) {
+    let parsed;
+    if (typeof listInput === 'string') {
+        parsed = JSON.parse(listInput);
+    } else {
+        parsed = listInput;
+    }
     for (const item of parsed) {
         list.push(obj !== null ? new obj(item) : item);
     }

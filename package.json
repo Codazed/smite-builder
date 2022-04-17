@@ -11,7 +11,7 @@
     "nyc": "^15.1.0"
   },
   "name": "smite-builder",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Generate random teams and players with random builds to use with the Hi-Rez Studios game, Smite.",
   "main": "stg.js",
   "repository": "https://gitlab.com/Codazed/smite-builder",
