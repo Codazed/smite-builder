@@ -33,6 +33,10 @@ class Item {
                 };
             }
         }
+
+        if (itemObject.group) {
+            this.group = itemObject.group;
+        }
     }
 
     available(god) {
